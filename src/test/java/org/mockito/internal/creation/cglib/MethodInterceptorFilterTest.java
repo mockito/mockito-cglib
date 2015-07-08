@@ -11,18 +11,16 @@ import org.mockito.internal.InternalMockHandler;
 import org.mockito.internal.creation.DelegatingMethod;
 import org.mockito.internal.creation.MockSettingsImpl;
 import org.mockito.internal.creation.util.MockitoMethodProxy;
-import org.mockito.internal.invocation.InvocationBuilder;
 import org.mockito.internal.invocation.InvocationImpl;
 import org.mockito.internal.invocation.MockitoMethod;
 import org.mockito.internal.invocation.SerializableMethod;
-import org.mockitousage.MethodsImpl;
-import org.mockitoutil.TestBase;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Method;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.withSettings;

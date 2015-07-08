@@ -31,7 +31,7 @@ class SerializableMockitoMethodProxy implements MockitoMethodProxy, Serializable
         this.methodProxy = methodProxy;
     }
 
-    private MethodProxy getMethodProxy() {
+    MethodProxy getMethodProxy() {
         if (methodProxy == null) {
             methodProxy = MethodProxy.create(c1, c2, desc, name, superName);
         }

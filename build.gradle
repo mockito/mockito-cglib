@@ -11,8 +11,9 @@ repositories {
 }
 
 dependencies {
-  compile "org.mockito:mockito-core:2.+"
+  //This is the last version this project was building happily
+  //If we choose to maintain cglib integration, this needs to depend on 2.0 final
+  compile "org.mockito:mockito-core:2.0.28-beta"
   testCompile "junit:junit:4.12"
-  //compile(':ant:1.7.0')
 }
 

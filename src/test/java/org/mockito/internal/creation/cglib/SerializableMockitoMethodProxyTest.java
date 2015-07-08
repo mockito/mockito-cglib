@@ -6,8 +6,9 @@ package org.mockito.internal.creation.cglib;
 
 import org.junit.Test;
 import org.mockito.cglib.proxy.MethodProxy;
-import org.mockitoutil.TestBase;
-import org.powermock.reflect.Whitebox;
+import org.mockito.internal.util.reflection.Whitebox;
+
+import static org.junit.Assert.*;
 
 public class SerializableMockitoMethodProxyTest {
 
@@ -19,7 +20,7 @@ public class SerializableMockitoMethodProxyTest {
         serializableMockitoMethodProxy.methodProxy = null;
 
         // when
-        Object methodProxy = Whitebox.invokeMethod(serializableMockitoMethodProxy, "getMethodProxy",  new Object[0]);
+        MethodProxy methodProxy = serializableMockitoMethodProxy.getMethodProxy();
 
         // then
         Object info = Whitebox.getInternalState(methodProxy, "createInfo");
@@ -35,17 +36,11 @@ public class SerializableMockitoMethodProxyTest {
         serializableMockitoMethodProxy.methodProxy = null;
 
         // when
-        MethodProxy methodProxy = (MethodProxy) Whitebox.invokeMethod(serializableMockitoMethodProxy, "getMethodProxy",  new Object[0]);
+        MethodProxy methodProxy = serializableMockitoMethodProxy.getMethodProxy();
 
         // then
         assertEquals("a", methodProxy.getSignature().getDescriptor());
         assertEquals("b", methodProxy.getSignature().getName());
         assertEquals("c", methodProxy.getSuperName());
     }
-
-    @Override
-    public String toString() {
-        return "SerializableMockitoMethodProxyTest []";
-    }
-
 }
