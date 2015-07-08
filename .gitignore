@@ -12,3 +12,6 @@ gradle-app.setting
 *.iws
 .classpath
 .project
+
+out
+.DS_Store
